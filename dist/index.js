@@ -56,5 +56,11 @@ io.on("connection", function (socket) {
     io.emit("server: loadnotes", notes);
   });
 });
-server.listen(3000);
+
+//server.listen(3000);
 //console.log("servidor en puerto", 3000);
+
+var port = process.env.PORT || 3000;
+server.listen(port, function () {
+  console.log("Servidor en puerto", port);
+});
